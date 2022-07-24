@@ -10,8 +10,9 @@ import(
 func main(){
    app:= iris.New()
    
-   booksAPI:= app.Party("/books"){
-      booksAPI.use(iris.Compression)
+   booksAPI:= app.Party("/books")
+   {
+      booksAPI.Use(iris.Compression)
       booksAPI.Get("/",list)
       booksAPI.Post("/",create)
       }
